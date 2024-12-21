@@ -1,0 +1,8 @@
+# Server-side specific
+node_modules/
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite3
+.env
+*.log  
