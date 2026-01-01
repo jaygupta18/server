@@ -27,6 +27,7 @@ const bookappointment = async (req, res) => {
       date: req.body.date,
       time: req.body.time,
       doctorId: req.body.doctorId,
+      
       userId: req.locals,
     });
 

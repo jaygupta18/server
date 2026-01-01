@@ -9,7 +9,7 @@ const schema = mongoose.Schema(
     },
     doctorId: {
       type: mongoose.SchemaTypes.ObjectId,
-      ref: "User",
+      ref: "Doctor",
       required: true,
     },
     date: {
