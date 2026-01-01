@@ -13,8 +13,16 @@ const getallappointments = async (req, res) => {
       : {};
 
     const appointments = await Appointment.find(keyword)
-       .populate("doctorId")
-      .populate("userId");
+  .populate("userId") 
+  .populate({
+    path: "doctorId",
+    populate: {
+      path: "userId",
+      model: "User",
+      select: "firstname lastname" // jo fields chahiye
+    }
+  });
+
     return res.send(appointments);
   } catch (error) {
     res.status(500).send("Unable to get apponintments");
@@ -27,7 +35,7 @@ const bookappointment = async (req, res) => {
       date: req.body.date,
       time: req.body.time,
       doctorId: req.body.doctorId,
-      
+
       userId: req.locals,
     });
 
