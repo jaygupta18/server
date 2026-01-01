@@ -68,7 +68,7 @@ const register = async (req, res) => {
   } catch (error) {
     res.status(500).send("Unable to register user");
   }
-};
+}; 
 
 const updateprofile = async (req, res) => {
   try {
